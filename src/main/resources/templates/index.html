@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head th:insert="blocks/headParams :: headParams">
+
+</head>
+
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container">
+    <h1 th:text="${message}" style=" margin-top: 100px;text-align: center"></h1>
+
+    <div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Blood Type</th>
+                <th scope="col">Weight</th>
+                <th scope="col">Height</th>
+                <th scope="col">Room Number</th>
+                <th scope="col">Year of birth</th>
+                <th scope="col">About</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <div th:each="el : ${list}">
+                <tr>
+                    <th scope="row" th:text="${el.getSelfCode()}"></th>
+                    <td th:text="${el.getName()}"></td>
+                    <td th:text="${el.getAge()}"></td>
+                    <td th:text="${el.getBloodType()}"></td>
+                    <td th:text="${el.getWeight()}"></td>
+                    <td th:text="${el.getHeight()}"></td>
+                    <td th:text="${el.getRoomNumber()}"></td>
+                    <td th:text="${el.getYearOfBirth()}"></td>
+                    <td><a th:href=" '/patients/' + ${el.getSelfCode()}">Actions</a></td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

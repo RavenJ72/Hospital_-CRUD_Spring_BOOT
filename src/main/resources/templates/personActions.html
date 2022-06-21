@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head th:insert="blocks/headParams :: headParams"><title>Addition Page</title></head>
+
+
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container" style="margin-top: 100px">
+<div class="col-md-8">
+    <div class="card mb-3">
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Full Name</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" th:text="${patient.name}"></div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Age</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" th:text="${patient.age}" ></div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Blood Type</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" th:text="${patient.bloodType}">
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Weight</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" th:text="${patient.weight}">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Height</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" th:text="${patient.height}">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Room number</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" th:text="${patient.roomNumber}">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Year of birth</h6>
+                </div>
+                <div class="col-sm-9 text-secondary" th:text="${patient.yearOfBirth}">
+                </div>
+            </div>
+            <hr>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <a class="btn btn-info " target="__blank" th:href="'editPatient/' + ${patient.getSelfCode()}" >Edit</a>
+
+                    <form  th:action="@{'/patients/' + ${patient.getSelfCode()} + '/delete'}"  th:method="DELETE">
+
+
+                        <input type="submit" value="delete" class="btn btn-warning">
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
