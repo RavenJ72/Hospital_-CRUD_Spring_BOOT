@@ -24,14 +24,14 @@
             <!--            <label for="bloodType">Blood Type</label><input type="text" class="form-control" id="bloodType"   th:field="*{bloodType}">-->
             Blood type
             <select th:field="*{bloodType}" class="form-control" style="margin-top: 10px">
-                <option th:value="'M'">O+</option>
-                <option th:value="'F'">O-</option>
-                <option th:value="'M'">A+</option>
-                <option th:value="'F'">A-</option>
-                <option th:value="'M'">B+</option>
-                <option th:value="'F'">B-</option>
-                <option th:value="'M'">AB+</option>
-                <option th:value="'F'">AB-</option>
+                <option th:value="'O+'">O+</option>
+                <option th:value="'O-">O-</option>
+                <option th:value="'A+'">A+</option>
+                <option th:value="'A-'">A-</option>
+                <option th:value="'B+'">B+</option>
+                <option th:value="'B-'">B-</option>
+                <option th:value="'AB+'">AB+</option>
+                <option th:value="'AB-'">AB-</option>
             </select>
             <small th:if="${#fields.hasErrors('bloodType')}" th:errors="*{bloodType}" style="color: red"></small>
         </div>
